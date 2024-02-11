@@ -19,6 +19,14 @@ Figure 2. Sample of the top view capture
 
 Figure 3. Screenshot of the app streaming real-time view of the planter
 
+<img src="html/images/video.gif" width="600"/>
+
+Figure 4. Generated gif with timelapse
+
+<img src="images/website.png" width="600"/>
+
+Figure 5. Screen capture of local website
+
 
 ### Components:
 - Camera module (Wansview 2K G6)
@@ -26,19 +34,40 @@ Figure 3. Screenshot of the app streaming real-time view of the planter
 - Custom camera arm support
 - Raspberry Pi 3B
 
+## Installation
+
+- OpenCV
+- imageio
+- numpy
+
+TODO Add requirements.txt
+
+```
+cd /home/garamizo/Software/Plant-Timelapse
+sudo ln planter.conf /etc/apache2/sites-available  # install server conf file
+sudo a2ensite planter.conf  # enable website
+sudo a2dissite 000-default.conf  # disable default website
+sudo apache2ctl configtest  # verify configuration
+sudo systemctl restart apache2  # restart webserver service
+sudo systemctl status apache2  # check server
+```
+
 ## Adding Cron Job
 
 **E**dit cron job list with `$ crontab -e` and append:
 
-`0 * * * * python3 /home/garamizo/Software/Plant-Timelapse/cam_snapshot.py` 
+```
+0 * * * * python3 /home/garamizo/Software/Plant-Timelapse/cam_snapshot.py
+0 0 * * * python3 /home/garamizo/Software/Plant-Timelapse/make_gif.py
+``` 
 
-to execute `cam_snapshot.py` every hour (assuming this package is located at `/home/garamizo/Software`).
+to execute `cam_snapshot.py` every hour and `make_gif.py` every day at midnight(assuming this package is located at `/home/garamizo/Software`).
 
 ## Mechanical Design
 
 | <img src="images/explode_arm.png" height="400"/> | <img src="images/explode_head.png" height="400"/> |
 | --- | --- |
-| Figure 4a. Arm assembly | Figure 4b. Head assembly |
+| Figure 6a. Arm assembly | Figure 6b. Head assembly |
 
 ## Camera Breakdown
 
