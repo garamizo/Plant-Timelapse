@@ -41,6 +41,7 @@ Figure 5. Screen capture of local website
 - numpy
 
 TODO Add requirements.txt
+TODO Copy apache conf instead of sym-copy for better security
 
 ```
 cd /home/garamizo/Software/Plant-Timelapse
@@ -65,11 +66,16 @@ to execute `cam_snapshot.py` every hour and `make_gif.py` every day at midnight(
 
 ## Mechanical Design
 
+Novel or interesting features:
+- All custom parts are 3D printed on PLA, 0.2mm layer height
+- Arm joints are adjustable by 10 deg steps
+- Press fit enclosures for camera head and power supply
+
 | <img src="images/explode_arm.png" height="400"/> | <img src="images/explode_head.png" height="400"/> |
 | --- | --- |
 | Figure 6a. Arm assembly | Figure 6b. Head assembly |
 
-## Camera Breakdown
+## Camera Teardow
 
 IP camera model *Wansview 2K G6* features 
 - 3 MP (2304 x 1296 px)
