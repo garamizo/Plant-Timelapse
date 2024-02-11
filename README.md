@@ -19,11 +19,11 @@ Figure 2. Sample of the top view capture
 
 Figure 3. Screenshot of the app streaming real-time view of the planter
 
-<img src="html/images/video.gif" width="600"/>
+<img src="html/images/video.gif" width="800"/>
 
 Figure 4. Generated gif with timelapse
 
-<img src="images/website.png" width="600"/>
+<img src="images/website.png" width="800"/>
 
 Figure 5. Screen capture of local website
 
