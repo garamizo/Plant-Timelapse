@@ -59,10 +59,10 @@ sudo systemctl status apache2  # check server
 
 ```
 0 * * * * python3 /home/garamizo/Software/Plant-Timelapse/cam_snapshot.py
-0 0 * * * python3 /home/garamizo/Software/Plant-Timelapse/make_gif.py
+30 0 * * * python3 /home/garamizo/Software/Plant-Timelapse/make_gif.py
 ``` 
 
-to execute `cam_snapshot.py` every hour and `make_gif.py` every day at midnight(assuming this package is located at `/home/garamizo/Software`).
+to execute `cam_snapshot.py` every hour and `make_gif.py` every day at 0:30(assuming this package is located at `/home/garamizo/Software`).
 
 ## Mechanical Design
 

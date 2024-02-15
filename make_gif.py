@@ -7,8 +7,8 @@ import imageio
 # import os
 
 FOLDER = '/home/garamizo/Datasets/Plant-Timelapse'
-DEST = 'html/images'
-height = 600
+DEST = '/home/garamizo/Software/Plant-Timelapse/html/images/video.gif'
+height = 800
 
 imgs = []
 for path in sorted(glob(f'{FOLDER}/*.png')):
@@ -19,5 +19,5 @@ for path in sorted(glob(f'{FOLDER}/*.png')):
     imgs.append(img)
 
 imgs.append(img.copy() * 0)
-imageio.mimwrite(f'{DEST}/video.gif', imgs, fps=2, loop=0)
+imageio.mimwrite(f'{DEST}', imgs, fps=2, loop=0)
 
